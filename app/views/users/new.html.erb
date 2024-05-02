@@ -1,5 +1,6 @@
 <section>
   <div class="row">
+    <h1>Create new user:</h1>
     <div class="col-sm-6 col-sm-offset-1">
     <%= form_for :user, url: '/users' do |f| %>
 
@@ -10,17 +11,17 @@
 
       <div class="form-group">
         <%= f.label :email %>
-        <%= f.text_field :name, class: 'form-control' %>
+        <%= f.text_field :email, class: 'form-control' %>
       </div>
 
       <div class="form-group">
         <%= f.label :password %>
-        <%= f.password_field :name, class: 'form-control' %>
+        <%= f.password_field :password, class: 'form-control' %>
       </div>
 
       <div class="form-group">
         <%= f.label :password_confirmation %>
-        <%= f.password_field :name, class: 'form-control' %>
+        <%= f.password_field :password_confirmation, class: 'form-control' %>
       </div>
 
       <%= f.submit 'Create User', class: 'btn btn-primary' %>
