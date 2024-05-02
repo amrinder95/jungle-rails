@@ -1,2 +1,31 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<section>
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-1">
+    <%= form_for :user, url: '/users' do |f| %>
+
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :email %>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password %>
+        <%= f.password_field :name, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :name, class: 'form-control' %>
+      </div>
+
+      <%= f.submit 'Create User', class: 'btn btn-primary' %>
+    <% end %>
+    </div>
+  </div>
+</section>
+
