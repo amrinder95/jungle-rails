@@ -1,4 +1,4 @@
-describe('Home Page', () => {
+describe('Product details', () => {
   it('Visits the home page', () => {
     cy.visit('/');
   });
