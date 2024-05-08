@@ -1,5 +1,11 @@
 <section>
   <div class="row">
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>">
+        <%= value %>
+      </div>
+    <% end %>
+
     <h1>Create new user:</h1>
     <div class="col-sm-6 col-sm-offset-1">
     <%= form_for :user, url: '/users' do |f| %>

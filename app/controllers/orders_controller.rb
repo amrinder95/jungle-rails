@@ -1,5 +1,4 @@
 class OrdersController < ApplicationController
-
   def show
     @order = Order.find(params[:id])
     @line_items = @order.line_items
@@ -31,14 +30,14 @@ class OrdersController < ApplicationController
     Stripe::Charge.create(
       source:      params[:stripeToken],
       amount:      cart_subtotal_cents,
-      description: "Khurram Virani's Jungle Order",
+      description: current_user.first_name + " " + current_user.last_name + "'s Jungle Order`",
       currency:    'cad'
     )
   end
 
   def create_order(stripe_charge)
     order = Order.new(
-      email: params[:stripeEmail],
+      email: @current_user.email,
       total_cents: cart_subtotal_cents,
       stripe_charge_id: stripe_charge.id, # returned by stripe
     )

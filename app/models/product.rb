@@ -8,4 +8,9 @@ class Product < ApplicationRecord
   validates :price, presence: true
   validates :quantity, presence: true
   validates :category, presence: true
+  
+  def out_of_stock?
+    self.quantity == 0
+  end
+
 end
